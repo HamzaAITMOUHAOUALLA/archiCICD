@@ -43,32 +43,40 @@ Exécute un scénario métier complet sans erreur
 
 🏗️ Architecture Générale
 Developer Push
-      ↓
-    Jenkins
-      ↓
- ┌──────────────────────┐
- │        CI            │
- │  - Checkout          │
- │  - Build Maven       │
- │  - Unit Tests        │
- │  - SonarQube         │
- └──────────────────────┘
-      ↓
- ┌──────────────────────┐
- │     SECURITY         │
- │  - Docker Build      │
- │  - Trivy Scan        │
- └──────────────────────┘
-      ↓
- ┌──────────────────────┐
- │      STAGING         │
- │  - Deploy Container  │
- │  - Health Check      │
- │  - E2E CRUD Tests    │
- │  - API Chaining      │
- └──────────────────────┘
-      ↓
-   Cleanup automatique
+      │
+      ▼
+   Jenkins
+      │
+      ▼
++----------------------+
+|          CI          |
+|----------------------|
+| - Checkout           |
+| - Build (Maven)      |
+| - Unit Tests         |
+| - SonarQube Analysis |
++----------------------+
+      │
+      ▼
++----------------------+
+|       SECURITY       |
+|----------------------|
+| - Docker Build       |
+| - Trivy Scan         |
++----------------------+
+      │
+      ▼
++----------------------+
+|        STAGING       |
+|----------------------|
+| - Deploy Container   |
+| - Health Check       |
+| - E2E CRUD Tests     |
+| - API Chaining       |
++----------------------+
+      │
+      ▼
+ Cleanup automatique
 
 
 ✅ Tests automatiques de non-régression
