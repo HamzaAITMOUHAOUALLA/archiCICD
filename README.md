@@ -42,6 +42,9 @@ Exécute un scénario métier complet sans erreur
 👉 Si une étape échoue → le pipeline est stoppé automatiquement.
 
 🏗️ Architecture Générale
+
+
+
 Developer Push
       │
       ▼
