@@ -72,3 +72,54 @@ Developer Push
 
 
 ✅ Tests automatiques de non-régression
+
+
+
+🧪 Tests E2E – Full CRUD Enterprise
+🎯 But
+
+Valider un scénario métier complet via API REST.
+
+Ce test est un test de non-régression fonctionnelle automatisé.
+
+🔗 API Chaining – Principe
+
+Les appels API sont dépendants les uns des autres.
+
+Étapes exécutées :
+1️⃣ CREATE
+
+POST /api/owners
+→ récupérer l’ID
+
+2️⃣ READ
+
+GET /api/owners/{id}
+→ vérifier les données
+
+3️⃣ UPDATE
+
+PUT /api/owners/{id}
+→ modifier les données
+
+4️⃣ DELETE
+
+DELETE /api/owners/{id}
+
+Si une étape échoue → le pipeline échoue.
+
+🧠 Pourquoi c’est important ?
+
+Si un développeur :
+
+Change le mapping JSON
+
+Modifie les status HTTP
+
+Casse un endpoint
+
+Change la sécurité
+
+Introduit une régression
+
+👉 Le pipeline le détecte immédiatement.
